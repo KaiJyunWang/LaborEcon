@@ -23,11 +23,13 @@ c = 0.3
 n = 10_000_000
 
 #simulate data
-ϵ_0 = σ_0 * randn(n)
-ϵ_1 = σ_1 * randn(n)
+#multivariate normal distribution
+ϵ = rand(MvNormal([0, 0], [σ_0^2 σ_01; σ_01 σ_1^2]), n)
+ϵ_0 = ϵ[1, :]
+ϵ_1 = ϵ[2, :]
 w_0 = μ_0 .+ ϵ_0
-w_1 = μ_1 .+ ϵ_1 
-I = w_1 .- w_0 .> c
+w_1 = μ_1 .+ ϵ_1
+I = w_1 .> w_0 .+ c
 
 df = DataFrame(w_0 = w_0, w_1 = w_1, ϵ_0 = ϵ_0, ϵ_1 = ϵ_1, I = I)
 
