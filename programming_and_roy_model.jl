@@ -18,7 +18,7 @@ savefig(fig, "labor_force_participation.png")
 σ_01 = 1.5
 c = 0.3
 ρ = σ_01 / (σ_0 * σ_1)
-σ_v = sqrt(σ_0^2 + σ_1^2 - 2*σ_01^2)
+σ_v = sqrt(σ_0^2 + σ_1^2 - 2*σ_01)
 
 n = 10_000_000
 
@@ -40,7 +40,6 @@ Q_0 = df[df.I .== 1, :].ϵ_0 |> mean
 #Q_1
 Q_1 = df[df.I .== 1, :].ϵ_1 |> mean
 #theoretical values
-#w_0 somehow not works
 avg_w_0_I_theoretical = μ_0 + σ_0*σ_1/σ_v * (ρ - σ_0/σ_1) * pdf(Normal(0, 1), (μ_0-μ_1+c)/σ_v)/(1-cdf(Normal(0, 1), (μ_0-μ_1+c)/σ_v))
 avg_w_1_I_theoretical = μ_1 + σ_0*σ_1/σ_v * (σ_1/σ_0 - ρ) * pdf(Normal(0, 1), (μ_0-μ_1+c)/σ_v)/(1-cdf(Normal(0, 1), (μ_0-μ_1+c)/σ_v))
 
