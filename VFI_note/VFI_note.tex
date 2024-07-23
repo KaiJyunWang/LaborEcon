@@ -1,0 +1,299 @@
+\documentclass[12pt]{article}
+\input{prefix.tex}%
+\input{symbols.tex}
+
+\title{
+    An Introduction to Function Iterations for Dynamic Programming 
+    }
+
+\author{%
+   Kai-Jyun Wang
+   \thanks{Department of Economics; National Taiwan University. 
+   Email: \url{b11303072@ntu.edu.tw}.}
+}
+
+\date{\today}
+
+\begin{document}
+\setstretch{1.2}
+
+\maketitle
+
+\section*{Foreword}
+This document aims at providing mathematical details for value 
+function iteration (VFI) in economics. For implementation in Julia, 
+please refer to Sargent's fantastic 
+\href{https://julia.quantecon.org/dynamic_programming/optgrowth.html}
+{website}. This document serves as a supplement to the website.
+
+\tableofcontents
+
+\section{Optimal Growth Model}
+In this capter, we introduce an optimal growth model. The model is 
+going to be our working example for VFI. 
+
+Consider an agent who seeks to maximize his lifetime expected utility. 
+The agent's problem is to choose his future path of consumption $c_t$ 
+and capital stock $k_{t+1}$, subject to the constraint: 
+\begin{equation}\eqlab{constraint}
+    c_t + k_{t+1} \leq y_t,
+\end{equation} 
+where both $c_t$ and $k_{t+1}$ are non-negative. $y_t$ is the agent's 
+income at time $t$, which follows the law of motion: 
+\begin{equation}\eqlab{production}
+    y_t = z_t f(k_t),\quad z_t \overset{iid}{\sim} \phi,
+\end{equation}
+where $z_t$ is a random variable that follows a positively supported 
+distribution $\phi$. $f(k_t)$ is the production function. 
+
+\begin{assumption}
+    The production function $f(k_t)$ is continuous and increasing in 
+    $k_t$.
+\end{assumption}
+
+The agent's optimization problem is given by: 
+\begin{equation}
+    v(y_t) = \max_{c_t} \E_0\sbrc{\sum_{t=0}^{\infty} \beta^t u(c_t)},
+\end{equation}
+subject to the constraints \eqref{constraint} and \eqref{production},
+where $\beta \in (0, 1)$ is the discount factor, and $u(c_t)$ is the 
+utility flow in each period. $v(y_t)$ is called the \textbf{value 
+function} and $y_t$ is called the \textbf{state variable} of $v$. We 
+further take two assumptions on $u(\cdot)$ and $v(\cdot)$.
+
+\begin{assumption}
+    The utility function $u(c_t)$ is continuous and increasing in 
+    $c_t$.
+\end{assumption}
+
+Note that by this assumption, the inequality in \eqref{constraint} 
+is replaced by an equality since if $c_t + k_{t+1}$ is strictly less 
+than $y_t$, the agent can always increase $c_t$ to improve the 
+utility. 
+
+\begin{assumption}
+    The value function $v(y_t)$ is bounded.
+\end{assumption}
+
+Note that we may also write value function as follows. 
+\begin{equation}
+    \begin{split}
+        v(y_0) 
+        &= \max_{c_t} \E_0\sbrc{\sum_{t=0}^{\infty} \beta^t u(c_t)}\\
+        &= \max_{c_t} \E_0\sbrc{u(c_0) + \beta\sum_{t=1}^{\infty} \beta^{t-1} u(c_t)}\\
+        &= \max_{c_t} u(c_0) + \beta\E_0\sbrc{\sum_{t=0}^{\infty} \beta^{t} u(c_{t+1})}\\ 
+        &= \max_{c_0} u(c_0) + \beta\E_0\sbrc{v(y_1)}\\
+        &= \max_{c_0} u(c_0) + \beta\int v(z_1f(y_0-c_0))\phi(dz_1).
+    \end{split}
+\end{equation}
+The form is called the \textbf{Bellman equation}. It is a functional 
+equation regarding $v$. Note that the true value function would solve 
+this functional equation. The Bellman equation approach 
+has a significant advantage compared to the traditional method of 
+Lagrange multiplier. The Bellman equation approach transforms an 
+infinite horizon problem into a two-period problem, and also deals 
+with the uncertainty. However, there is a clear drawback: How to find 
+$v$? 
+
+\section{Mathematical Details} 
+In this section, we provide mathematical details for solving the 
+Bellman equation. For those who do not interest in the details, it 
+is safe to skip this section.
+
+We begin by introducing some fundamental concepts in analysis. 
+
+\begin{definition}
+    A \textbf{metric space} is a pair $(X, d)$, where $X$ is a set 
+    and $d: X \times X \to \R$ is a function that satisfies the 
+    following properties: 
+    \begin{thmenum}
+        \item $d(x, y) \geq 0$ for all $x, y \in X$; $d(x, y) = 0$ 
+        if and only if $x = y$.
+        \item $d(x, y) = d(y, x)$ for all $x, y \in X$.
+        \item $d(x, z) \leq d(x, y) + d(y, z)$ for all $x, y, z \in X$.
+    \end{thmenum}
+    $d$ is called a \textbf{metric} (\textbf{distance}) on $X$.
+\end{definition}
+
+\begin{definition}
+    A sequence $\set{x_n}$ in a metric space $(X, d)$ is said to be 
+    converge to $x \in X$ if for every $\epsilon > 0$, there exists 
+    $N \in \N$ such that $d(x_n, x) < \epsilon$ for all $n \geq N$.
+\end{definition}
+
+\begin{definition}
+    A sequence $\set{x_n}$ in a metric space $(X, d)$ is said to be 
+    \textbf{Cauchy} if for every $\epsilon > 0$, there exists $N \in 
+    \N$ such that $d(x_n, x_m) < \epsilon$ for all $n, m \geq N$.
+\end{definition}
+
+\begin{definition}
+    A metric space $(X, d)$ is said to be \textbf{complete} if every 
+    Cauchy sequence in $X$ converges to a point in $X$.
+\end{definition}
+
+\begin{remark}
+    $\R^n$ is a complete metric space under the Euclidean metric $d(x,y) = 
+    \sqrt{\sum_{i=1}^{n}(x_i-y_i)^2}$.
+\end{remark}
+
+\begin{definition}
+    A normed space $X$ is a vector space with scalar field $\R$
+    equipped with a norm $\norm{\cdot}$, satisfying that 
+    \begin{thmenum}
+        \item $\norm{x} \geq 0$ for all $x\in X$; $\norm{x} = 0$ if 
+        and only if $x = 0$.
+        \item $\norm{ax} = \abs{a}\norm{x}$ for all $a\in\R$ and $x\in X$.
+        \item $\norm{x+y} \leq \norm{x} + \norm{y}$ for all $x, y\in X$.
+    \end{thmenum}
+\end{definition}
+
+\begin{remark}
+    The scalar field $\R$ can be replaced by other fields, but 
+    for our purpose, we only consider $\R$.
+\end{remark}
+
+\begin{remark}
+    The norm induces a metric $d(x, y) = \norm{x-y}$. In fact, 
+    the Euclidean norm $\norm{x} = \sqrt{\sum_{i=1}^{n}x_i^2}$ 
+    induces the Euclidean metric. For this reason, a normed 
+    space is automatically a metric space and the metric is 
+    defined by its norm.
+\end{remark}
+
+\begin{definition}
+    $B(X)$ is the set of all real-valued bounded continuous functions 
+    defined on $X$.
+\end{definition}
+
+\begin{proposition}
+    $B(X)$ is a complete metric space under the supremum norm
+    $\ds \norm{f} = \sup_{x \in X} \abs{f(x)}$.
+\end{proposition}
+\begin{pf}
+    Let $\set{f_n}$ be a Cauchy sequence in $B(X)$. For each $x \in 
+    X$, define $f(x) = \lim_{n\to\infty} f_n(x)$. The limit exists 
+    since $\set{f_n(x)}$ is a Cauchy sequence in $\R$. We claim that
+    $f\in B(X)$. First, $f$ is bounded since for each $x \in X$, 
+    there exists $N$ such that $\abs{f_n(x) - f_m(x)} < \epsilon$ 
+    for all $n, m \geq N$. Letting $m = N$ and $n\to\infty$ yields 
+    that $\abs{f(x) - f_N(x)}\leq \epsilon$. Hence, $\abs{f(x)} \leq 
+    \abs{f_N(x)} + \epsilon$ for all $x \in X$. Second, $f$ is 
+    continuous since for each $x \in X$ and $\epsilon > 0$, we 
+    may pick $\delta > 0$ such that $\abs{f_N(x) - f_N(y)} < 
+    \epsilon$ for all $y \in X$ with $d(x, y) < \delta$. Hence, 
+    $\abs{f(x) - f(y)} \leq \abs{f(x) - f_N(x)} + \abs{f_N(x) - 
+    f_N(y)} + \abs{f_N(y) - f(y)} < 3\epsilon$ for all $y \in X$ 
+    with $d(x, y) < \delta$. Since $\epsilon$ is arbitrary, $f$ 
+    is indeed continuous and hence $f\in B(X)$. This completes 
+    the proof.
+\end{pf}
+
+\begin{definition}
+    An operator $T: X \to X$ is called a \textbf{contraction} 
+    if there exists $\alpha \in (0, 1)$ such that $d(T(x), T(y)) \leq 
+    \alpha d(x, y)$ for all $x, y \in X$.
+\end{definition}
+
+\begin{theorem}[Contraction Mapping Theorem]
+    Let $(X, d)$ be a complete metric space and $T: X \to X$ be a 
+    contraction mapping with contraction factor $\alpha \in (0, 1)$. 
+    Then $T$ has an unique fixed point $x^* \in X$. That is, $Tx^* 
+    = x^*$. Furthermore, for any $x_0\in X$, the sequence $\set{x_n}$ 
+    defined by $x_{n+1} = Tx_n$ converges to $x^*$.
+\end{theorem}
+\begin{pf}
+    For each $x_0 \in X$, we define $x_n = T^n(x_0)$. Then 
+    \begin{equation}
+        d(x_{n+1}, x_n) = d(T^{n+1}(x_0), T^n(x_0)) \leq \alpha^n 
+        d(x_1, x_0)\to 0 \quad \text{as } n\to\infty.
+    \end{equation}
+    Hence, $\set{x_n}$ is a Cauchy sequence. Since $X$ is complete, 
+    $\set{x_n}$ converges to some $x^* \in X$. Next, suppose both 
+    $x^*$ and $y^*$ are fixed points of $T$. Then 
+    \begin{equation}
+        d(x^*, y^*) = d(T(x^*), T(y^*)) \leq \alpha d(x^*, y^*) 
+        < d(x^*, y^*),
+    \end{equation}
+    posing a contradiction. Therefore, $x^*$ is unique.  
+\end{pf}
+
+\begin{theorem}[Blackwell's Theorem]
+    Suppose $T: B(X) \to B(X)$ satisfies the following properties: 
+    \begin{thmenum}
+        \item $T$ is monotone, i.e., $f \leq g$ implies $Tf \leq Tg$.
+        \item There exists $\alpha\in (0,1)$ such that for any 
+        $c\in \R_+$, $T(f+a) \leq Tf + \alpha c$.
+    \end{thmenum}
+    Then $T$ is a contraction.
+\end{theorem}
+\begin{pf}
+    Suppose $f, g \in B(X)$ and $c\in\R_+$ satisfy the conditions 
+    (a) and (b). Then 
+    \begin{equation}
+        f \leq g + \norm{f-g}.
+    \end{equation}
+    Thus we have 
+    \begin{equation}
+        Tf \leq T(g + \norm{f-g}) \leq Tg + \alpha\norm{f-g}.
+    \end{equation}
+    Rearranging the terms yiels the desired result.
+\end{pf}
+
+We now turn back to the Bellman equation. 
+
+\begin{definition}
+    The \textbf{Bellman operator} $T: v \mapsto Tv$ is defined by 
+    \begin{equation}
+        Tv(y) = \max_{c} u(y) + \beta\int v(zf(y-c))\phi(dz).
+    \end{equation}
+\end{definition}
+\begin{remark}
+    The solution to the Bellman equation is the fixed point of the 
+    Bellman operator $T$.
+\end{remark}
+
+\begin{corollary}
+    The Bellman operator $T$ is a contraction.
+\end{corollary}
+\begin{pf}
+    We are going to check the conditions in Blackwell's Theorem are 
+    satisfied. First, if $v\leq w$, $v,w\in B(X)$, let $c_v$ and 
+    $c_w$ be the optimal consumption for $v$ and $w$, respectively. 
+    Then 
+    \begin{equation}
+        \begin{split}
+            Tv(y) 
+            &= u(c_v) + \beta\int v(zf(y-c_v))\phi(dz)\\
+            &\leq u(c_v) + \beta\int w(zf(y-c_v))\phi(dz)\\
+            &\leq u(c_w) + \beta\int w(zf(y-c_w))\phi(dz) = Tw(y).
+        \end{split}
+    \end{equation} 
+    Thus the monotonicity is satisfied. Second, for any $c\in\R_+$, 
+    \begin{equation}
+        \begin{split}
+            T(v+c)(y) 
+            &= u(c) + \beta\int v(zf(y-c))\phi(dz)\\
+            &\leq u(c) + \beta\int v(zf(y-c))+c \phi(dz)
+            = Tv(y) + \alpha c.
+        \end{split}
+    \end{equation}
+    This completes the proof.
+\end{pf}
+
+Since $B(X)$ is a complete metric space and $T$ is a contraction 
+operator on it, by the contraction mapping theorem, $T$ has an 
+unique fixed point. This fixed point is the solution to the 
+Bellman equation. Also, the proof of the contraction mapping 
+theorem reveals a numerical algorithm to find the fixed point:
+\begin{thmenum}
+    \item Start with a guess $v_0\in B(X)$.
+    \item Apply the Bellman operator $T$ to $v_0$ to get $v_1 = 
+    Tv_0$. 
+    \item Compare $v_1$ with $v_0$. If they are close enough, 
+    stop; otherwise, set $v_0 = v_1$ and repeat step 2.
+\end{thmenum} 
+The algorithm is called the \textbf{value function iteration}. 
+
+
+\end{document}
