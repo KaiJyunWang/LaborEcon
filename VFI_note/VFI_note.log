@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.14)  24 JUL 2024 08:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.14)  24 JUL 2024 08:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -848,7 +848,7 @@ Overfull \hbox (7.60938pt too wide) in paragraph at lines 191--194
 
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 196.
 [4]
-Package hyperref Info: bookmark level for unknown corollary defaults to 0 on input line 255.
+Package hyperref Info: bookmark level for unknown corollary defaults to 0 on input line 256.
  [5]
 \tf@thm=\write6
 \openout6 = `VFI_note.thm'.
@@ -866,7 +866,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  120i,17n,121p,507b,565s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/kevin/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/kevin/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/mathpazo/fplmbb.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on VFI_note.pdf (6 pages, 169237 bytes).
+Output written on VFI_note.pdf (6 pages, 169249 bytes).
 PDF statistics:
  182 PDF objects out of 1000 (max. 8388607)
  54 named destinations out of 1000 (max. 500000)

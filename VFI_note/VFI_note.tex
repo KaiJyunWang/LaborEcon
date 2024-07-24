@@ -227,15 +227,16 @@ fundamental concepts in analysis.
 \end{theorem}
 \begin{pf}
     Suppose $f, g \in B(X)$ and $c\in\R_+$ satisfy the conditions 
-    (a) and (b). Then 
+    (a) and (b). Then notice that
     \begin{equation}
-        f \leq g + \norm{f-g}.
+        g \leq f + \norm{f-g}.
     \end{equation}
     Thus we have 
     \begin{equation}
-        Tf \leq T(g + \norm{f-g}) \leq Tg + \alpha\norm{f-g}.
+        Tg \leq T(f + \norm{f-g}) \leq Tf + \alpha\norm{f-g}.
     \end{equation}
-    Rearranging the terms yiels the desired result.
+    Rearranging the terms and taking the norm yiels the 
+    desired result.
 \end{pf}
 
 We now turn back to the Bellman equation. 
