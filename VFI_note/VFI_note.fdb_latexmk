@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1721743504 "c:/Users/kevin/college/labor_econ/VFI_note/VFI_note.tex" "VFI_note.pdf" "VFI_note" 1721743506 0
+["pdflatex"] 1721780189 "c:/Users/kevin/college/labor_econ/VFI_note/VFI_note.tex" "VFI_note.pdf" "VFI_note" 1721780191 0
   "C:/Users/kevin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1721482211 237354 819feaa128156a78909a999df04a0ae8 ""
   "C:/Users/kevin/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1719318483 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/kevin/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1719318484 684 3a51bd4fd9600428d5264cf25f04bb9a ""
@@ -216,11 +216,11 @@
   "C:/Users/kevin/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/kevin/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/kevin/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "VFI_note.aux" 1721743506 5343 95a3660a881caed648cd5a191711fe64 "pdflatex"
-  "VFI_note.out" 1721743506 295 a0e0ccb6655d13a10cfa89670f310858 "pdflatex"
-  "VFI_note.tex" 1721743503 11078 bcac05bc8ca60df272f3e0c49c00910a ""
-  "VFI_note.toc" 1721743506 152 2b4c5f978b71e0ab09b178ed81898c5b "pdflatex"
-  "c:/Users/kevin/college/labor_econ/VFI_note/VFI_note.tex" 1721743503 11078 bcac05bc8ca60df272f3e0c49c00910a ""
+  "VFI_note.aux" 1721780190 5347 e462258bf4e91e1d54c2ca350385b645 "pdflatex"
+  "VFI_note.out" 1721780190 318 6213c2614801478af9a8f424721070c9 "pdflatex"
+  "VFI_note.tex" 1721780188 11305 f54d026f74ed4b54aeb693b15c7d2b41 ""
+  "VFI_note.toc" 1721780190 156 fae361bf874f873d174eafeb90678321 "pdflatex"
+  "c:/Users/kevin/college/labor_econ/VFI_note/VFI_note.tex" 1721780188 11305 f54d026f74ed4b54aeb693b15c7d2b41 ""
   "prefix.tex" 1720144326 8194 6e3134a6568c8907e821e4f97ebc770e ""
   "symbols.tex" 1720144877 1091 8dc8100a4286f75ebb349593baea675f ""
   (generated)

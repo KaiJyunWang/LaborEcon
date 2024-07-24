@@ -95,9 +95,9 @@ infinite horizon problem into a two-period problem, and also deals
 with the uncertainty. However, there is a clear drawback: How to find 
 $v$? 
 
-\section{Mathematical Details} 
-In this section, we provide mathematical details for solving the 
-Bellman equation. We begin by introducing some 
+\section{Value Function Iteration} 
+In this section, we provide mathematical details for value function 
+iteration. We begin by introducing some 
 fundamental concepts in analysis. 
 
 \begin{definition}
@@ -292,6 +292,11 @@ theorem reveals a numerical algorithm to find the fixed point:
     stop; otherwise, set $v_0 = v_1$ and repeat step 2.
 \end{thmenum} 
 The algorithm is called the \textbf{value function iteration}. 
+
+The value function iteration is one of the most popular methods 
+to solve dynamic programming problems. One may observe that in the 
+finite-horizon case, the value function iteration is equivalent to 
+the backward induction. 
 
 
 
