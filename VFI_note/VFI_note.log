@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.14)  24 JUL 2024 08:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.14)  26 JUL 2024 16:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -573,7 +573,9 @@ Package: appendix 2020/02/08 v1.2c extra appendix facilities
 ) (C:\Users\kevin\MiKTeX\tex/latex/jknappen\mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup7
-) (C:\Users\kevin\MiKTeX\tex/latex/tocloft\tocloft.sty
+) (C:\Users\kevin\MiKTeX\tex/latex/comment\comment.sty
+\CommentStream=\write4
+ Excluding comment 'comment') (C:\Users\kevin\MiKTeX\tex/latex/tocloft\tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has section divisions on input line 51.
 \cftparskip=\skip73
@@ -610,9 +612,9 @@ Package tocloft Info: The document has section divisions on input line 51.
 \cfttabindent=\skip102
 \cfttabnumwidth=\skip103
 )
-Package hyperref Info: Option `unicode' set `true' on input line 97.
-Package hyperref Info: Option `breaklinks' set `true' on input line 97.
-Package hyperref Info: Option `colorlinks' set `true' on input line 97.
+Package hyperref Info: Option `unicode' set `true' on input line 98.
+Package hyperref Info: Option `breaklinks' set `true' on input line 98.
+Package hyperref Info: Option `colorlinks' set `true' on input line 98.
  (C:\Users\kevin\MiKTeX\tex/latex/ocgx2\ocgx2.sty
 Package: ocgx2 2024/03/18 v0.57 ports`ocgx'functionalitytodvips+ps2pdf,xelatexanddvipdfmx
  (C:\Users\kevin\MiKTeX\tex/latex/ocgx2\ocgbase.sty
@@ -757,8 +759,8 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring ON on input line 17.
  (VFI_note.out) (VFI_note.out)
-\@outlinefile=\write4
-\openout4 = `VFI_note.out'.
+\@outlinefile=\write5
+\openout5 = `VFI_note.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 21.
  (C:\Users\kevin\MiKTeX\tex/latex/psnfss\ot1ppl.fd
@@ -825,8 +827,8 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 1.
 )
-\tf@toc=\write5
-\openout5 = `VFI_note.toc'.
+\tf@toc=\write6
+\openout6 = `VFI_note.toc'.
 
  [1
 
@@ -849,26 +851,26 @@ Overfull \hbox (7.60938pt too wide) in paragraph at lines 191--194
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 196.
 [4]
 Package hyperref Info: bookmark level for unknown corollary defaults to 0 on input line 256.
- [5]
-\tf@thm=\write6
-\openout6 = `VFI_note.thm'.
+ Excluding 'comment' comment. [5]
+\tf@thm=\write7
+\openout7 = `VFI_note.thm'.
 
  [6] (VFI_note.aux)
 Package rerunfilecheck Info: File `VFI_note.out' has not changed.
 (rerunfilecheck)             Checksum: 6213C2614801478AF9A8F424721070C9;318.
  ) 
 Here is how much of TeX's memory you used:
- 25395 strings out of 476406
- 467947 string characters out of 2800354
+ 25447 strings out of 476406
+ 468998 string characters out of 2800354
  1863787 words of memory out of 3000000
- 45184 multiletter control sequences out of 15000+600000
+ 45234 multiletter control sequences out of 15000+600000
  561651 words of font info for 151 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  120i,17n,121p,507b,565s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/kevin/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/kevin/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/mathpazo/fplmbb.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on VFI_note.pdf (6 pages, 169249 bytes).
+Output written on VFI_note.pdf (6 pages, 168020 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
- 54 named destinations out of 1000 (max. 500000)
+ 180 PDF objects out of 1000 (max. 8388607)
+ 52 named destinations out of 1000 (max. 500000)
  45 words of extra memory for PDF output out of 10000 (max. 10000000)
 
