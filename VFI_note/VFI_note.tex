@@ -3,7 +3,8 @@
 \input{symbols.tex}
 
 \title{
-    An Introduction to Value Function Iteration 
+    A Brief Introduction to the Fundamental Methods in Dynamic 
+    Programming
     }
 
 \author{%
@@ -20,9 +21,11 @@
 \maketitle
 
 \section*{Foreword}
-This document aims at providing mathematical details for value 
-function iteration (VFI) in economics. For implementation in Julia, 
-please refer to Sargent's fantastic 
+This document aims at providing mathematical details for fundamental 
+methods used to solve dynamic programming problems. Three methods 
+are covered: value function iteration (VFI), envelope condition method 
+(ECM), and policy function iteration (PFI). For implementation in 
+Julia, please refer to Sargent's fantastic 
 \href{https://julia.quantecon.org/dynamic_programming/optgrowth.html}
 {website}. This document serves as a supplement to the website.
 
@@ -305,6 +308,9 @@ to solve dynamic programming problems. One may observe that in the
 finite-horizon case, the value function iteration is equivalent to 
 the backward induction. 
 
+\section{Envelope Condition Method}
+In this section, we introduce the envelope condition method. We 
+begin by adding a few assumptions to the optimal growth model.
 
-
+\section{Policy Function Iteration}
 \end{document}
