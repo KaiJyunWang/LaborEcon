@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.14)  29 JUL 2024 13:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.14)  29 JUL 2024 23:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -575,7 +575,19 @@ Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup7
 ) (C:\Users\kevin\MiKTeX\tex/latex/comment\comment.sty
 \CommentStream=\write4
- Excluding comment 'comment') (C:\Users\kevin\MiKTeX\tex/latex/tocloft\tocloft.sty
+ Excluding comment 'comment') (C:\Users\kevin\MiKTeX\tex/latex/tikz-cd\tikz-cd.sty
+Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
+ (C:\Users\kevin\MiKTeX\tex/latex/tikz-cd\tikzlibrarycd.code.tex (C:\Users\kevin\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (C:\Users\kevin\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (C:\Users\kevin\MiKTeX\tex/generic/pgf/libraries\pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowinset=\dimen285
+\pgfarrowlength=\dimen286
+\pgfarrowwidth=\dimen287
+\pgfarrowlinewidth=\dimen288
+))) (C:\Users\kevin\MiKTeX\tex/latex/tocloft\tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has section divisions on input line 51.
 \cftparskip=\skip73
@@ -612,9 +624,9 @@ Package tocloft Info: The document has section divisions on input line 51.
 \cfttabindent=\skip102
 \cfttabnumwidth=\skip103
 )
-Package hyperref Info: Option `unicode' set `true' on input line 98.
-Package hyperref Info: Option `breaklinks' set `true' on input line 98.
-Package hyperref Info: Option `colorlinks' set `true' on input line 98.
+Package hyperref Info: Option `unicode' set `true' on input line 99.
+Package hyperref Info: Option `breaklinks' set `true' on input line 99.
+Package hyperref Info: Option `colorlinks' set `true' on input line 99.
  (C:\Users\kevin\MiKTeX\tex/latex/ocgx2\ocgx2.sty
 Package: ocgx2 2024/03/18 v0.57 ports`ocgx'functionalitytodvips+ps2pdf,xelatexanddvipdfmx
  (C:\Users\kevin\MiKTeX\tex/latex/ocgx2\ocgbase.sty
@@ -686,7 +698,7 @@ Package: pdfbase 2022/08/04 v0.55 driver independent access to low-level PDF fea
  (C:\Users\kevin\MiKTeX\tex/latex/enumitem\enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip104
-\enit@outerparindent=\dimen285
+\enit@outerparindent=\dimen289
 \enit@toks=\toks57
 \enit@inbox=\box69
 \enit@count@id=\count381
@@ -741,13 +753,13 @@ LaTeX Font Info:    ... okay on input line 18.
  (C:\Users\kevin\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count408
-\scratchdimen=\dimen286
+\scratchdimen=\dimen290
 \scratchbox=\box70
 \nofMPsegments=\count409
 \nofMParguments=\count410
 \everyMPshowfont=\toks58
 \MPscratchCnt=\count411
-\MPscratchDim=\dimen287
+\MPscratchDim=\dimen291
 \MPnumerator=\count412
 \makeMPintoPDFobject=\count413
 \everyMPtoPDFconversion=\toks59
@@ -852,26 +864,36 @@ Overfull \hbox (7.60938pt too wide) in paragraph at lines 194--197
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 199.
  [5]
 Package hyperref Info: bookmark level for unknown corollary defaults to 0 on input line 259.
- Excluding 'comment' comment.
+ Excluding 'comment' comment. [6] [7] [8]
+Overfull \hbox (7.97002pt too wide) in paragraph at lines 427--431
+[]\T1/ppl/m/it/12 Let $\OMS/zplm/m/n/12 F \OT1/zplm/m/n/12 = []$\T1/ppl/m/it/12 . De-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--461
+
+ []
+
+[9]
 \tf@thm=\write7
 \openout7 = `VFI_note.thm'.
 
- [6] (VFI_note.aux)
+ [10] (VFI_note.aux)
 Package rerunfilecheck Info: File `VFI_note.out' has not changed.
 (rerunfilecheck)             Checksum: 3BBBA36573F82E2611A5C5745AC30A8F;666.
  ) 
 Here is how much of TeX's memory you used:
- 25451 strings out of 476406
- 469038 string characters out of 2800354
+ 26544 strings out of 476406
+ 502264 string characters out of 2800354
  1865787 words of memory out of 3000000
- 45236 multiletter control sequences out of 15000+600000
- 561651 words of font info for 151 fonts, out of 8000000 for 9000
+ 46275 multiletter control sequences out of 15000+600000
+ 566024 words of font info for 162 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 120i,17n,121p,507b,559s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 120i,17n,121p,507b,1109s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/kevin/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/kevin/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/mathpazo/fplmbb.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on VFI_note.pdf (6 pages, 170775 bytes).
+Output written on VFI_note.pdf (10 pages, 191269 bytes).
 PDF statistics:
- 190 PDF objects out of 1000 (max. 8388607)
- 54 named destinations out of 1000 (max. 500000)
+ 253 PDF objects out of 1000 (max. 8388607)
+ 91 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

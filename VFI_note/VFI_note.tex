@@ -312,5 +312,223 @@ the backward induction.
 In this section, we introduce the envelope condition method. We 
 begin by adding a few assumptions to the optimal growth model.
 
+\begin{assumption}
+    $u(\cdot), f(\cdot)\in C^\infty$ are both strictly concave.
+\end{assumption}
+
+\begin{assumption}
+    $u(0) = f(0) = 0$.
+\end{assumption}
+
+\begin{assumption}
+    $u(\cdot),f(\cdot)$ satisfies the Inada conditions: 
+    \begin{equation}
+        \begin{aligned}
+            \lim_{c\to 0} u'(c) = \infty, \quad & \lim_{c\to \infty} u'(c) = 0,\\
+            \lim_{k\to 0} f'(k) = \infty, \quad & \lim_{k\to \infty} f'(k) = 0.
+        \end{aligned}
+    \end{equation}
+\end{assumption}
+
+\begin{definition}
+    A function $c^*: \R_+ \to \R_+$ is called the 
+    \textbf{optimal policy} if 
+    \begin{equation}
+        c^*(y) = \argmax_{c} u(c) + \beta\int v^*(zf(y-c))\phi(dz),
+    \end{equation}
+    where $v^*$ is the value function.
+\end{definition}
+
+Following this definition, several properties are derived. 
+
+\begin{proposition}
+    $c^*$ satisfies the following:
+    \begin{thmenum}
+        \item $c^*$ is unique.
+        \item $c^*$ is continuous and strictly increasing. 
+        \item $c^*(y)\in (0,y)$ for any $y>0$. 
+        \item $(v^*)'(y) = (u'\circ c^*)(y)$.
+    \end{thmenum}
+\end{proposition}
+\begin{pf}
+    (a), (b) and (c) are omitted. For (d), one may write 
+    \begin{equation}
+        v^*(y) = \max_k u(y-k) + \beta\int v^*(zf(k))\phi(dz).
+    \end{equation}
+    Differentiating with respect to $y$ and evaluating at the 
+    maximum yields 
+    \begin{equation}
+        (v^*)'(y) = u'(c^*(y)).
+    \end{equation}
+\end{pf}
+
+\begin{remark}
+    The last property is called the \textbf{envelope condition}.
+\end{remark}
+
+Now, by the first order condition, we have 
+\begin{equation}
+    \begin{split}
+        u'(c^*(y)) &= \beta\int (v^*)'(zf(y-c^*(y)))zf'(y-c^*(y))\phi(dz)\\
+        &= \beta\int (u'\circ c^*)(zf(y-c^*(y)))zf'(y-c^*(y))\phi(dz).
+    \end{split}
+\end{equation}
+Our goal is to find $c^*$ solving the above functional 
+equation. We first define the set where $c^*$ lies. 
+\begin{definition}
+    \begin{equation}
+        \Sigma \coloneqq \Set{\sigma}{\sigma:y\mapsto \sigma(y)\in(0,y)
+        \text{ is continuous, strictly increasing.}}
+    \end{equation}
+\end{definition}
+And an operator on it.
+\begin{definition}
+    $K: \Sigma \to \Sigma$ with $K\sigma$ defined by the solution $c$ of 
+    the following functional equation:
+    \begin{equation}
+        u'(c) = \beta\int (u'\circ \sigma)(zf(y-c))zf'(y-c)\phi(dz).
+    \end{equation}
+\end{definition}
+
+A careful reader may question whether $K$ is 
+well-defined. The following proposition addresses 
+this issue.
+\begin{proposition}
+    $K$ is well-defined.
+\end{proposition}
+\begin{pf}
+    To show that $K$ is well-defined, we need to show that 
+    the functional equation has an unique solution lying in 
+    $\Sigma$ given any $\sigma\in\Sigma$. 
+
+    First, observe that the left hand side of the equation 
+    is strictly decreasing in $c$ with the value approaching 
+    $\infty$ as $c\to 0$ and approaching $0$ as $c\to \infty$. 
+    The right hand side is strictly increasing in $c$ with the 
+    value approaching $0$ as $c\to 0$ and approaching $\infty$ 
+    as $c\to y$. Hence, the equation has a solution by the 
+    intermediate value theorem. The strict monotonicity further 
+    guarantees the uniqueness of the solution.
+
+    Next, we have to show that the solution lies in $\Sigma$. 
+    By previous discussion, the solution is interior. Also, 
+    it is strictly increasing since given any $c$, the right 
+    hand side is strictly decreasing in $y$, and hence the 
+    solution must be strictly increasing. The last piece is 
+    the continuity. This is guaranteed by the continuity of 
+    $u', f, f'$ and $\sigma$.
+\end{pf}
+Having shown that $K$ is well-defined, we are now in a position 
+to examine the convergence of the operator. The operator $K$ has, 
+in fact, a tight connection with the Bellman operator $T$. 
+We are going to see the connection by introducing the following 
+mapping. 
+\begin{definition}
+    Let $\F = \Set{v:\R_+ \to\R_+}{v(0) = 0, v'(y)>u'(y), 
+    \text{ $v$ is strictly concave and differentiable.}}$. 
+    Define $\varphi:\F \to\Sigma$ with 
+    $v\mapsto \varphi v = (u')^{-1}\circ v'$.
+\end{definition}
+\begin{proposition}
+    $\varphi$ is a bijection.
+\end{proposition}
+\begin{pf}
+    We first check that $\varphi$ is well-defined. By 
+    assumption, $u'$ is strictly decreasing and continuous; 
+    $u'$ is thus a bijection and hence so is $(u')^{-1}$. Note 
+    that $u'$ maps $(0, \infty)$ to $(0, \infty)$, and so 
+    does $v'$. Also, for every $v\in\F$, $v'$ is strictly 
+    decreasing and continuous, which implies that $\varphi v$ 
+    is strictly increasing and continuous with range 
+    $(0, \infty)$. Furthermore, since $v'>u'$, $\varphi v(y) 
+    = ((u')^{-1}\circ v')(y)<((u')^{-1}\circ u')(y) = y$. It 
+    follows that $\sigma\coloneqq\phi v\in\Sigma$. 
+
+    Next, we show that $\varphi$ is a bijection. Fix 
+    $\sigma\in\Sigma$, let 
+    \begin{equation}
+        v(y) = \int_{0}^{y} u'(\sigma(x)) dx \in \F.
+    \end{equation}
+    Then $\varphi v = (u')^{-1}(u'(\sigma(y))) = \sigma(y)$. 
+    Thus $\varphi$ is surjective. Besides, if $\varphi v = 
+    \varphi w$, then $(u')^{-1}\circ v' = (u')^{-1}\circ w'$ 
+    and thus $v' = w'$. Since $v(0) = w(0) = 0$, $v = w$. 
+    Hence $\varphi$ is injective. This completes the proof. 
+\end{pf}
+
+\begin{theorem}
+    The diagram \\
+    \begin{center}
+        \vspace{-1cm}
+        \begin{tikzcd}
+            \F \arrow[r, "T"] \arrow[d, "\varphi"]
+            & \F \arrow[d, "\varphi"] \\
+            \Sigma \arrow[r,"K"]
+            & \Sigma
+        \end{tikzcd}
+    \end{center}
+    commutes. That is, for any $v\in\F$, $\varphi Tv 
+    = K\varphi v$.
+\end{theorem}
+\begin{pf}
+    For any $v\in\F$, by the envelope theorem, 
+    $(Tv)'(y) = u'(\sigma(y))$, where $\sigma$ solves 
+    \begin{equation}
+        u'(\sigma(y)) = \beta\int (u'\circ \sigma)(zf(y-\sigma(y)))zf'(y-\sigma(y))\phi(dz).
+    \end{equation}
+    This implies that
+    \begin{equation}
+        \varphi Tv = ((u')^{-1}\circ u')(\sigma(y)) = \sigma.
+    \end{equation}
+    On the other hand, $K\varphi v(y)$ is the $\sigma$ 
+    that solves 
+    \begin{equation}
+        \begin{split}
+            u'(\sigma(y)) 
+            &= \beta\int (u'\circ (\varphi v))(zf(y-\sigma(y)))zf'(y-\sigma(y))\phi(dz) \\
+            &= \beta\int (u'\circ ((u')^{-1}\circ v'))(zf(y-\sigma(y)))zf'(y-\sigma(y))\phi(dz) \\ 
+            &= \beta\int v'(zf(y-\sigma(y)))zf'(y-\sigma(y))\phi(dz).
+        \end{split}
+    \end{equation}
+    The two $\sigma$ coincide, and hence the diagram commutes.
+\end{pf}
+\begin{corollary}
+    The sequence of policies 
+    $\set{\sigma, K\sigma, K^2\sigma,\ldots}$ 
+    converges to the optimal policy $c^*$.
+\end{corollary}
+\begin{pf}
+    With the above theorem, we may write $K^n = 
+    \varphi T^n \varphi$. Since $T$ is a contraction, 
+    $T^n\varphi^{-1}\sigma$ converges to the fixed point of $T$, which 
+    is $v^*$. Thus $K^n\sigma$ converges to $c^*$.
+\end{pf}
+
+The above result not only shows the convergence of the
+operator $K$ but also tells us that the convergent rate 
+is the same as the Bellman operator $T$. 
+
+However, in practice, the envelope condition method tends 
+to be more efficient than the value function iteration. 
+One of the reason is that the curvature of the policy 
+function tends to be smaller than the value function. 
+While using linear interpolation to approximate the 
+value off the grid points, the error is smaller for
+the policy function. 
+
+Another important reason is that the envelope condition 
+method is often combined with the endogenous grid method. 
+The computationally expensive part of the envelope 
+condition method is to solve the functional equation. 
+This is because of the appearance of $c$ on both sides. 
+The endogenous grid method solves this issue by putting 
+grids on $k$ instead of $y$. By doing so, in every step, 
+one only needs to evaluate the integral on the right hand 
+side and then apply the inverse of $u'$ to get the 
+updated policy function, which is much faster.
+
 \section{Policy Function Iteration}
+The last method we are going to introduce is the policy 
+function iteration, also known as the Howard's policy 
+improvement algorithm. 
 \end{document}
