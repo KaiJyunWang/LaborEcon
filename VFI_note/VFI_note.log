@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.14)  29 JUL 2024 23:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.14)  30 JUL 2024 16:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -850,50 +850,50 @@ LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 5
  (C:\Users\kevin\MiKTeX\tex/latex/psnfss\ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 ) [2]
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 107.
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 108.
  [3]
-Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 137.
-Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 171.
-Package hyperref Info: bookmark level for unknown proof defaults to 0 on input line 174.
+Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 138.
+Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 172.
+Package hyperref Info: bookmark level for unknown proof defaults to 0 on input line 175.
 
-Overfull \hbox (7.60938pt too wide) in paragraph at lines 194--197
+Overfull \hbox (7.60938pt too wide) in paragraph at lines 195--198
 []\T1/ppl/m/it/12 An op-er-a-tor $\OML/zplm/m/it/12 T \OT1/zplm/m/n/12 : \OML/zplm/m/it/12 X \OMS/zplm/m/n/12 ! \OML/zplm/m/it/12 X$ \T1/ppl/m/it/12 is called a \T1/ppl/b/it/12 con-trac-tion \T1/ppl/m/it/12 if there ex-ists $\OML/zplm/m/it/12  \OMS/zplm/m/n/12 2 \OT1/zplm/m/n/12 (\OT1/ppl/m/n/12 0, 1\OT1/zplm/m/n/12 )$ \T1/ppl/m/it/12 such that $\OML/zplm/m/it/12 d\OT1/zplm/m/n/12 (\OML/zplm/m/it/12 T\OT1/zplm/m/n/12 (\OML/zplm/m/it/12 x\OT1/zplm/m/n/12 )\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 T\OT1/zplm/m/n/12 (\OML/zplm/m/it/12 y\OT1/zplm/m/n/12 )) \OMS/zplm/m/n/12 ^^T
  []
 
 [4]
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 199.
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 200.
  [5]
-Package hyperref Info: bookmark level for unknown corollary defaults to 0 on input line 259.
+Package hyperref Info: bookmark level for unknown corollary defaults to 0 on input line 260.
  Excluding 'comment' comment. [6] [7] [8]
-Overfull \hbox (7.97002pt too wide) in paragraph at lines 427--431
+Overfull \hbox (7.97002pt too wide) in paragraph at lines 430--434
 []\T1/ppl/m/it/12 Let $\OMS/zplm/m/n/12 F \OT1/zplm/m/n/12 = []$\T1/ppl/m/it/12 . De-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 460--461
+Underfull \hbox (badness 10000) in paragraph at lines 463--464
 
  []
 
-[9]
+[9] [10] [11]
 \tf@thm=\write7
 \openout7 = `VFI_note.thm'.
 
- [10] (VFI_note.aux)
+ [12] (VFI_note.aux)
 Package rerunfilecheck Info: File `VFI_note.out' has not changed.
-(rerunfilecheck)             Checksum: 3BBBA36573F82E2611A5C5745AC30A8F;666.
+(rerunfilecheck)             Checksum: 9D9D9774DBA363795C4A0BFCBB545911;782.
  ) 
 Here is how much of TeX's memory you used:
- 26544 strings out of 476406
- 502264 string characters out of 2800354
+ 26576 strings out of 476406
+ 502678 string characters out of 2800354
  1865787 words of memory out of 3000000
- 46275 multiletter control sequences out of 15000+600000
- 566024 words of font info for 162 fonts, out of 8000000 for 9000
+ 46287 multiletter control sequences out of 15000+600000
+ 566522 words of font info for 164 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  120i,17n,121p,507b,1109s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/kevin/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/kevin/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/mathpazo/fplmbb.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/kevin/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb><C:/Users/kevin/MiKTeX/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on VFI_note.pdf (10 pages, 191269 bytes).
+Output written on VFI_note.pdf (12 pages, 202256 bytes).
 PDF statistics:
- 253 PDF objects out of 1000 (max. 8388607)
- 91 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 289 PDF objects out of 1000 (max. 8388607)
+ 109 named destinations out of 1000 (max. 500000)
+ 69 words of extra memory for PDF output out of 10000 (max. 10000000)
 

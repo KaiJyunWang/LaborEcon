@@ -2,3 +2,4 @@
 \contentsline {section}{\numberline {2}Value Function Iteration}{3}{section.2}%
 \contentsline {section}{\numberline {3}Envelope Condition Method}{6}{section.3}%
 \contentsline {section}{\numberline {4}Policy Function Iteration}{10}{section.4}%
+\contentsline {section}{\numberline {5}Future Methods}{12}{section.5}%

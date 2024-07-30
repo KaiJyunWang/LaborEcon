@@ -1318,6 +1318,9 @@ INPUT C:\Users\kevin\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Users\kevin\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\kevin\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs5.tfm
 INPUT C:\Users\kevin\MiKTeX\fonts\tfm\public\mathpazo\fplmbb.tfm
+INPUT C:\Users\kevin\MiKTeX\fonts\vf\public\mathpazo\zplmr7y.vf
+INPUT C:\Users\kevin\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Users\kevin\MiKTeX\fonts\tfm\public\mathpazo\fplmr.tfm
 OUTPUT VFI_note.thm
 INPUT VFI_note.aux
 INPUT .\VFI_note.out
